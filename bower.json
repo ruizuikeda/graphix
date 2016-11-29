@@ -7,6 +7,7 @@
         "alertifyjs": "x.x.x",
         "animate-css": "x.x.x",
         "defiantjs": "x.x.x",
-        "underscore": "x.x.x"
+        "underscore": "x.x.x",
+        "angular": "1.5.x"
     }
 }
