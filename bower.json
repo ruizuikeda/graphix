@@ -6,6 +6,7 @@
         "moment": "x.x.x",
         "alertifyjs": "x.x.x",
         "animate-css": "x.x.x",
-        "defiantjs": "x.x.x"
+        "defiantjs": "x.x.x",
+        "underscore": "x.x.x"
     }
 }
