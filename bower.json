@@ -1,0 +1,6 @@
+{
+    "name": "graphix",
+    "dependencies": {
+        "bootstrap": "3.x.x"
+    }
+}
