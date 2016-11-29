@@ -4,6 +4,7 @@
         "bootstrap": "3.x.x",
         "fontawesome": "x.x.x",
         "moment": "x.x.x",
-        "alertifyjs": "x.x.x"
+        "alertifyjs": "x.x.x",
+        "animate-css": "x.x.x"
     }
 }
