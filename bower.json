@@ -1,6 +1,7 @@
 {
     "name": "graphix",
     "dependencies": {
-        "bootstrap": "3.x.x"
+        "bootstrap": "3.x.x",
+        "fontawesome": "x.x.x"
     }
 }
