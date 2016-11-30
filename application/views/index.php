@@ -16,7 +16,7 @@
     </head>
     <body class="ng-cloak">
         
-        <div ui-view class="ng-cloak container"><!-- Conteúdo dinâmico --></div>
+        <div ui-view class="ng-cloak container-fluid"><!-- Conteúdo dinâmico --></div>
         
         <!-- JAVASCRIPT Core -->
         <script type="text/javascript" src="app/bower_components/jquery/dist/jquery.min.js"></script>
