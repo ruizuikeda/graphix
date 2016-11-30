@@ -25,13 +25,16 @@
         <script type="text/javascript" src="app/bower_components/moment/min/moment-with-locales.min.js"></script>
         <script type="text/javascript" src="app/bower_components/underscore/underscore-min.js"></script>
         <script type="text/javascript" src="app/bower_components/defiantjs/dist/defiant.min.js"></script>
+        <!-- JAVASCRIPT Custom -->
+        <script type="text/javascript" src="app/js/custom.js"></script>
         <!-- Angular Core -->
         <script type="text/javascript" src="app/bower_components/angular/angular.min.js"></script>
         <script type="text/javascript" src="app/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script type="text/javascript" src="app/bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
         <!-- App -->
         <script type="text/javascript" src="app/app.js"></script>
-        <!-- App Controllers -->
+        <!-- App Module -->
         <script type="text/javascript" src="app/angular/index/index.controller.js"></script>
+        <script type="text/javascript" src="app/angular/teste/teste.module.js"></script>
     </body>
 </html>
