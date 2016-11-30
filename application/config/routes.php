@@ -55,14 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 
-
-
-
-
-
-
-
-
 /*
 | -------------------------------------------------------------------------
 | Templates
@@ -70,6 +62,15 @@ $route['translate_uri_dashes'] = FALSE;
 | Rotas de acesso das views vindo do front end
 */
 $route['templates/(:any)/(:any)'] = 'templates/view/$1/$2';
+
+
+/*
+| -------------------------------------------------------------------------
+| Teste
+| -------------------------------------------------------------------------
+| Rotas de teste
+*/
+$route['teste/usuario/(:num)'] = 'teste/usuario/$1';
 
 
 
