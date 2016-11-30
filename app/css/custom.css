@@ -1,0 +1,11 @@
+/*
+| -------------------------------------------------------------------------
+| ng-cloak
+| -------------------------------------------------------------------------
+|
+| Utilizado para barrar o visualização antes do angular ser carregado
+|
+*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}

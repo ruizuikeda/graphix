@@ -65,11 +65,11 @@ $route['translate_uri_dashes'] = FALSE;
 
 /*
 | -------------------------------------------------------------------------
-| LOGIN
+| LOGIN / INDEX
 | -------------------------------------------------------------------------
 | Rotas da tela de login
 */
-
+$route['templates/(:any)/(:any)'] = 'templates/view/$1/$2';
 
 
 
