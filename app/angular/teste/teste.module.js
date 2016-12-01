@@ -3,7 +3,7 @@ App.factory('testeFactory', function($q, $http){
         get_hash: function(){
             var deferred = $q.defer();
             var url = 'teste/usuario/hash';
-            var params = $.param({});
+            var params = $.param({hash: 'ikeda'});
             var config = {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'

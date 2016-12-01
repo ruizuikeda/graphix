@@ -15,6 +15,10 @@ class Teste extends CI_Controller {
     }
 
     public function hash(){
+        if($this->input->post('hash')!='ikeda') {
+            echo '-1';
+            exit;
+        }
         echo $this->security->get_csrf_hash();
     }
 

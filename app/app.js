@@ -18,6 +18,14 @@ App.config(
                  
              }
          })
+             .state('/auth', {
+             url: '/auth',
+             controller: 'indexController',
+             templateUrl: 'auth/index',
+             resolve: {
+
+             }
+         })
      }
     ]
 );

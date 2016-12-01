@@ -82,15 +82,20 @@ $route['teste/usuario/(:num)'] = 'teste/usuario/$1';
 */
 $route['teste/usuario/(:num)'] = 'teste/usuario/$1';
 $route['teste/usuario/valida']['post'] = 'teste/validar_login';
-$route['teste/usuario/hash'] = 'teste/hash';
+$route['teste/usuario/hash']['post'] = 'teste/hash';
 
 
 
 
 
 
-
-
+/*
+| -------------------------------------------------------------------------
+| Auth teste
+| -------------------------------------------------------------------------
+| Rotas de teste auth
+*/
+$route['auth/(:any)'] = 'auth/$1';
 
 
 
