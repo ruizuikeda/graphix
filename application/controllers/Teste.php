@@ -14,12 +14,17 @@ class Teste extends CI_Controller {
         echo "<pre>"; print_r($usuario);
     }
 
+    public function hash(){
+        echo $this->security->get_csrf_hash();
+    }
+
     public function validar_login(){
         #  ------------------------------------------
         # | Validando o formulário                   |
         #  ------------------------------------------
         # carregando a biblioteca de validação de formulários
         $this->load->library('form_validation');
+        //$this->load->library('security');
         # setando as regras do formulário
         $this->form_validation->set_rules('login', 'Login', 'trim|required|min_length[5]|max_length[12]|alpha_dash');
         $this->form_validation->set_rules('senha', 'Senha', 'trim|required');

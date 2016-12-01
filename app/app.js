@@ -1,7 +1,8 @@
 // Create our angular module
 var App = angular.module('app', [
     'ui.router',
-    'oc.lazyLoad'
+    'oc.lazyLoad',
+    'ngStorage'
 ]);
 
 App.config(

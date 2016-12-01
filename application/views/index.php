@@ -31,6 +31,7 @@
         <script type="text/javascript" src="app/bower_components/angular/angular.min.js"></script>
         <script type="text/javascript" src="app/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script type="text/javascript" src="app/bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+        <script type="text/javascript" src="app/bower_components/ngstorage/ngStorage.min.js"></script>
         <!-- App -->
         <script type="text/javascript" src="app/app.js"></script>
         <!-- App Module -->

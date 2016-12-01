@@ -1,8 +1,28 @@
-App.factory('testeFactory', function($q){
+App.factory('testeFactory', function($q, $http){
     return {
+        get_hash: function(){
+            var deferred = $q.defer();
+            var url = 'teste/usuario/hash';
+            var params = $.param({});
+            var config = {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
 
+            $http.post(url, params, config)
+                .success(function(data, status, headers, config){
+                deferred.resolve(data);
+            }).error(function(data, status, headers, config){
+                console.log('erro');
+            });
+
+            return deferred.promise;
+        }
     }
 });
+
+
 
 App.config(
     ['$stateProvider', '$urlRouterProvider',
@@ -13,7 +33,10 @@ App.config(
              controller: 'testeController',
              templateUrl: 'templates/teste/teste.html',
              resolve: {
-
+                 hash: function(testeFactory){
+                     var hash = testeFactory.get_hash();
+                     return hash;
+                 }
              }
          })
              .state('/teste/usuario', {
@@ -31,7 +54,7 @@ App.config(
 
 
 
-App.controller('testeController', ['$scope', '$rootScope', '$window', '$state', '$http', function ($scope, $rootScope, $window, $state, $http) {
+App.controller('testeController', ['hash', '$scope', '$rootScope', '$window', '$state', '$http', '$sessionStorage', function (hash, $scope, $rootScope, $window, $state, $http, $sessionStorage) {
     var self = this;
     log_controller('teste');
 
@@ -45,11 +68,14 @@ App.controller('testeController', ['$scope', '$rootScope', '$window', '$state', 
         var login = $scope.login;
         var senha = $scope.senha;
         //teste/usuario/valida
+//        var hash  = testeFactory.get_hash();
+//        console.log(hash);
 
         var url = 'teste/usuario/valida';
         var params = $.param({
             login: login,
-            senha: senha
+            senha: senha,
+            csrf_token_graphis: hash
         });
         var config = {
             headers: {
@@ -68,13 +94,7 @@ App.controller('testeController', ['$scope', '$rootScope', '$window', '$state', 
                     break;
                 default:
                     //sucesso
-                    var json = [];
-                    $.each($window.sessionStorage, function(i, v){
-                        console.log(i);
-                        console.log(v);
-                        json.push(angular.fromJson(v));
-                    });
-                    console.log(json);
+
                     break;
             }
         }).error(function(data, status, headers, config){

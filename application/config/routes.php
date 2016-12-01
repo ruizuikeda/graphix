@@ -82,7 +82,7 @@ $route['teste/usuario/(:num)'] = 'teste/usuario/$1';
 */
 $route['teste/usuario/(:num)'] = 'teste/usuario/$1';
 $route['teste/usuario/valida']['post'] = 'teste/validar_login';
-
+$route['teste/usuario/hash'] = 'teste/hash';
 
 
 
