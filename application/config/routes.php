@@ -74,7 +74,14 @@ $route['teste/usuario/(:num)'] = 'teste/usuario/$1';
 
 
 
-
+/*
+| -------------------------------------------------------------------------
+| Teste
+| -------------------------------------------------------------------------
+| Rotas de teste
+*/
+$route['teste/usuario/(:num)'] = 'teste/usuario/$1';
+$route['teste/usuario/valida']['post'] = 'teste/validar_login';
 
 
 
