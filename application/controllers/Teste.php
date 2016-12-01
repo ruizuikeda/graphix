@@ -15,16 +15,62 @@ class Teste extends CI_Controller {
     }
 
     public function validar_login(){
-        //$_POST = json_decode(file_get_contents('php://input'), true);
-        $post = $this->input->post();
-        $this->load->model('usuario/usuario');
-        $idUsuario = $this->usuario->valida_login($post['login'], $post['senha']);
-        if($idUsuario) {
-            $usuario = $this->usuario->get_usuario($idUsuario);
-            echo json_encode($usuario);
-        } else {
+        #  ------------------------------------------
+        # | Validando o formulário                   |
+        #  ------------------------------------------
+        # carregando a biblioteca de validação de formulários
+        $this->load->library('form_validation');
+        # setando as regras do formulário
+        $this->form_validation->set_rules('login', 'Login', 'trim|required|min_length[5]|max_length[12]|alpha_dash');
+        $this->form_validation->set_rules('senha', 'Senha', 'trim|required');
+        # validando
+        if ($this->form_validation->run() == FALSE)
+        {
+            #  ------------------------------------------
+            # | Formulário recusado                      |
+            #  ------------------------------------------
             echo '-1';
             exit;
         }
+        else
+        {
+            #  ------------------------------------------
+            # | Formulário aceito                        |
+            #  ------------------------------------------
+            #
+            #  ------------------------------------------
+            # | Validando o formulário                   |
+            #  ------------------------------------------
+            # carregando o model do usuário para validar o login
+            $this->load->model('usuario/usuario');
+            # pegando as informações passada via post
+            $post = $this->input->post();
+            # validando o usuário
+            $idUsuario = $this->usuario->valida_login($post['login'], $post['senha']);
+            if($idUsuario)
+            {
+                #  ------------------------------------------
+                # | Usuário validado                         |
+                #  ------------------------------------------
+                $usuario = $this->usuario->get_usuario($idUsuario);
+                echo json_encode($usuario);
+            }
+            else
+            {
+                #  ------------------------------------------
+                # | Usuário recusado                         |
+                #  ------------------------------------------
+                echo '-1';
+                exit;
+            }
+        }
+
     }
 }
+
+
+
+
+
+
+
