@@ -67,9 +67,6 @@ App.controller('testeController', ['hash', '$scope', '$rootScope', '$window', '$
     $scope.valida = function(){
         var login = $scope.login;
         var senha = $scope.senha;
-        //teste/usuario/valida
-//        var hash  = testeFactory.get_hash();
-//        console.log(hash);
 
         var url = 'teste/usuario/valida';
         var params = $.param({
