@@ -10,6 +10,7 @@
         "underscore": "x.x.x",
         "angular": "1.5.x",
         "oclazyload": "x.x.x",
-        "angular-ui-router": "x.x.x"
+        "angular-ui-router": "x.x.x",
+        "ngstorage": "x.x.x"
     }
 }

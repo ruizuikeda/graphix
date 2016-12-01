@@ -23,9 +23,15 @@ class Usuario extends CI_Model {
         $this->load->database();
         $query = $this->db->get_where("usuario", array('idUsuario' => $idUsuario));
         $this->db->close();
-        $this->nome = $query->row('nome');
+        
+        $this->idUsuario    = $query->row('idUsuario');
+        $this->nome         = $query->row('nome');
+        $this->login        = $query->row('login');
+        $this->idFuncao     = $query->row('idFuncao');
+        $this->status       = $query->row('status');
+        $this->dataCriacao  = $query->row('dataCriacao');
+        
         return $this;
-        //return json_encode($query->row()); //nao posso passar a senha !!!!
     }
 
     public function valida_login($login, $senha){

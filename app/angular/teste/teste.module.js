@@ -60,6 +60,23 @@ App.controller('testeController', ['$scope', '$rootScope', '$window', '$state', 
         $http.post(url, params, config)
             .success(function(data, status, headers, config){
             console.log(data);
+            switch(data){
+                case -1:
+                case '-1':
+                    //erro
+                    $window.alert('Usuário ou senha inválida.');
+                    break;
+                default:
+                    //sucesso
+                    var json = [];
+                    $.each($window.sessionStorage, function(i, v){
+                        console.log(i);
+                        console.log(v);
+                        json.push(angular.fromJson(v));
+                    });
+                    console.log(json);
+                    break;
+            }
         }).error(function(data, status, headers, config){
             console.log('erro');
         });

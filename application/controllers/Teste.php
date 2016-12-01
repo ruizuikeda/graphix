@@ -27,7 +27,7 @@ class Teste extends CI_Controller {
         if ($this->form_validation->run() == FALSE)
         {
             #  ------------------------------------------
-            # | Formulário recusado                      |
+            # | Formulário recusado (erro)               |
             #  ------------------------------------------
             echo '-1';
             exit;
@@ -52,13 +52,34 @@ class Teste extends CI_Controller {
                 #  ------------------------------------------
                 # | Usuário validado                         |
                 #  ------------------------------------------
+                #
+                #  ------------------------------------------
+                # | Usuário informações                      |
+                #  ------------------------------------------
                 $usuario = $this->usuario->get_usuario($idUsuario);
+                #
+                #  ------------------------------------------
+                # | Tratando as SESSIONS                     |
+                #  ------------------------------------------
+                # carregando a biblioteca da session
+                $this->load->library('session');
+                # criando o array do usuário
+                $usuario_session = array(
+                    'nome' => $usuario->nome
+                );
+                # inserindo na session
+                $this->session->set_userdata($usuario_session);
+                #  ------------------------------------------
+                # | SUCESSO                                  |
+                # |     retornando um json com as info       |
+                # |     do usuário logado                    |
+                #  ------------------------------------------
                 echo json_encode($usuario);
             }
             else
             {
                 #  ------------------------------------------
-                # | Usuário recusado                         |
+                # | Usuário recusado (erro)                  |
                 #  ------------------------------------------
                 echo '-1';
                 exit;
